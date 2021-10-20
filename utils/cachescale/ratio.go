@@ -1,7 +1,7 @@
 package cachescale
 
 import (
-	"github.com/Fantom-foundation/lachesis-base/inter/idx"
+	"github.com/NextExchange/go-next-base/inter/idx"
 )
 
 // Ratio alters the cache sizes proportionally to a ratio

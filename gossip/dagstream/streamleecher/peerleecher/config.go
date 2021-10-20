@@ -3,7 +3,7 @@ package peerleecher
 import (
 	"time"
 
-	"github.com/Fantom-foundation/lachesis-base/inter/dag"
+	"github.com/NextExchange/go-next-base/inter/dag"
 )
 
 type EpochDownloaderConfig struct {

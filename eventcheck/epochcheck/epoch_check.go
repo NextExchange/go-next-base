@@ -3,9 +3,9 @@ package epochcheck
 import (
 	"errors"
 
-	"github.com/Fantom-foundation/lachesis-base/inter/dag"
-	"github.com/Fantom-foundation/lachesis-base/inter/idx"
-	"github.com/Fantom-foundation/lachesis-base/inter/pos"
+	"github.com/NextExchange/go-next-base/inter/dag"
+	"github.com/NextExchange/go-next-base/inter/idx"
+	"github.com/NextExchange/go-next-base/inter/pos"
 )
 
 var (

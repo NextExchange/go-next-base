@@ -5,10 +5,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/Fantom-foundation/lachesis-base/common/bigendian"
-	"github.com/Fantom-foundation/lachesis-base/kvdb"
-	"github.com/Fantom-foundation/lachesis-base/kvdb/memorydb"
-	"github.com/Fantom-foundation/lachesis-base/kvdb/table"
+	"github.com/NextExchange/go-next-base/common/bigendian"
+	"github.com/NextExchange/go-next-base/kvdb"
+	"github.com/NextExchange/go-next-base/kvdb/memorydb"
+	"github.com/NextExchange/go-next-base/kvdb/table"
 )
 
 func TestSyncedPoolUnderlying(t *testing.T) {

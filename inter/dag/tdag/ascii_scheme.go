@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Fantom-foundation/lachesis-base/hash"
-	"github.com/Fantom-foundation/lachesis-base/inter/dag"
-	"github.com/Fantom-foundation/lachesis-base/inter/idx"
+	"github.com/NextExchange/go-next-base/hash"
+	"github.com/NextExchange/go-next-base/inter/dag"
+	"github.com/NextExchange/go-next-base/inter/idx"
 )
 
 type ForEachEvent struct {

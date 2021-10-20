@@ -3,9 +3,9 @@ package abft
 import (
 	"github.com/pkg/errors"
 
-	"github.com/Fantom-foundation/lachesis-base/abft/election"
-	"github.com/Fantom-foundation/lachesis-base/inter/dag"
-	"github.com/Fantom-foundation/lachesis-base/inter/idx"
+	"github.com/NextExchange/go-next-base/abft/election"
+	"github.com/NextExchange/go-next-base/inter/dag"
+	"github.com/NextExchange/go-next-base/inter/idx"
 )
 
 var (

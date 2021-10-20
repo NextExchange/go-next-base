@@ -3,7 +3,7 @@ package synced
 import (
 	"sync"
 
-	"github.com/Fantom-foundation/lachesis-base/kvdb"
+	"github.com/NextExchange/go-next-base/kvdb"
 )
 
 // readonlyStore wrapper around any kvdb.ReadonlyStore.

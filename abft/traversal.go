@@ -3,8 +3,8 @@ package abft
 import (
 	"errors"
 
-	"github.com/Fantom-foundation/lachesis-base/hash"
-	"github.com/Fantom-foundation/lachesis-base/inter/dag"
+	"github.com/NextExchange/go-next-base/hash"
+	"github.com/NextExchange/go-next-base/inter/dag"
 )
 
 type eventFilterFn func(event dag.Event) bool

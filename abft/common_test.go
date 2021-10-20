@@ -1,13 +1,13 @@
 package abft
 
 import (
-	"github.com/Fantom-foundation/lachesis-base/inter/idx"
-	"github.com/Fantom-foundation/lachesis-base/inter/pos"
-	"github.com/Fantom-foundation/lachesis-base/kvdb"
-	"github.com/Fantom-foundation/lachesis-base/kvdb/memorydb"
-	"github.com/Fantom-foundation/lachesis-base/lachesis"
-	"github.com/Fantom-foundation/lachesis-base/utils/adapters"
-	"github.com/Fantom-foundation/lachesis-base/vecfc"
+	"github.com/NextExchange/go-next-base/inter/idx"
+	"github.com/NextExchange/go-next-base/inter/pos"
+	"github.com/NextExchange/go-next-base/kvdb"
+	"github.com/NextExchange/go-next-base/kvdb/memorydb"
+	"github.com/NextExchange/go-next-base/lachesis"
+	"github.com/NextExchange/go-next-base/utils/adapters"
+	"github.com/NextExchange/go-next-base/vecfc"
 )
 
 type applyBlockFn func(block *lachesis.Block) *pos.Validators

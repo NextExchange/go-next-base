@@ -1,7 +1,7 @@
 package wmedian
 
 import (
-	"github.com/Fantom-foundation/lachesis-base/inter/pos"
+	"github.com/NextExchange/go-next-base/inter/pos"
 )
 
 type WeightedValue interface {

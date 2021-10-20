@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/Fantom-foundation/lachesis-base/kvdb"
+	"github.com/NextExchange/go-next-base/kvdb"
 )
 
 type Producer struct {

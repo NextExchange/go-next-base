@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"math"
 
-	"github.com/Fantom-foundation/lachesis-base/inter/idx"
+	"github.com/NextExchange/go-next-base/inter/idx"
 )
 
 /*

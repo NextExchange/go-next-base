@@ -1,6 +1,6 @@
 package abft
 
-import "github.com/Fantom-foundation/lachesis-base/utils/cachescale"
+import "github.com/NextExchange/go-next-base/utils/cachescale"
 
 type Config struct {
 }
