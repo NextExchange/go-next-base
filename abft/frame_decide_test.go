@@ -11,7 +11,7 @@ import (
 	"github.com/NextSmartChain/go-next-base/inter/dag/tdag"
 	"github.com/NextSmartChain/go-next-base/inter/idx"
 	"github.com/NextSmartChain/go-next-base/inter/pos"
-	"github.com/NextSmartChain/go-next-base/next"
+	"github.com/NextSmartChain/go-next-base/lachesis"
 )
 
 func TestConfirmBlocks_1(t *testing.T) {

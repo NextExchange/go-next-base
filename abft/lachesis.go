@@ -6,7 +6,7 @@ import (
 	"github.com/NextSmartChain/go-next-base/inter/dag"
 	"github.com/NextSmartChain/go-next-base/inter/idx"
 	"github.com/NextSmartChain/go-next-base/inter/pos"
-	"github.com/NextSmartChain/go-next-base/next"
+	"github.com/NextSmartChain/go-next-base/lachesis"
 )
 
 var _ lachesis.Consensus = (*Lachesis)(nil)

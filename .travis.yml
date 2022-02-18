@@ -3,7 +3,7 @@ language: go
 go:
   - 1.13.x
 
-go_import_path: github.com/NextSmartChain/go-nextbft-base
+go_import_path: github.com/NextSmartChain/go-lachesis-base
 
 cache:
   directories:

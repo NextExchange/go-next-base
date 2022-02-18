@@ -5,7 +5,7 @@ import (
 	"github.com/NextSmartChain/go-next-base/inter/pos"
 	"github.com/NextSmartChain/go-next-base/kvdb"
 	"github.com/NextSmartChain/go-next-base/kvdb/memorydb"
-	"github.com/NextSmartChain/go-next-base/next"
+	"github.com/NextSmartChain/go-next-base/lachesis"
 	"github.com/NextSmartChain/go-next-base/utils/adapters"
 	"github.com/NextSmartChain/go-next-base/vecfc"
 )
