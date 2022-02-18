@@ -2,7 +2,6 @@ package abft
 
 import (
 	"fmt"
-
 	"github.com/NextSmartChain/go-next-base/inter/idx"
 	"github.com/NextSmartChain/go-next-base/inter/pos"
 )
