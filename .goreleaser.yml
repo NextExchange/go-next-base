@@ -3,7 +3,7 @@ before:
     - make clean proto vendor
 builds:
   - main: ./cmd/lachesis/main.go
-    binary: go-next-base
+    binary: go-nextbft-base
     ldflags:
       - -linkmode external -extldflags -static -s -w
       - -X main.gitCommit={{ .ShortCommit }}
@@ -23,7 +23,7 @@ archive:
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ .Tag }}-next"
+  name_template: "{{ .Tag }}-nextbft"
 changelog:
   sort: asc
   filters:
@@ -49,10 +49,10 @@ nfpm:
     - rpm
 
   empty_folders:
-    - /var/log/go-next-base
+    - /var/log/go-nextbft-base
 
   files:
-    "scripts/daemon/go-next-base.service": "/lib/systemd/system/go-next-base.service"
+    "scripts/daemon/go-next-base.service": "/lib/systemd/system/go-nextbft-base.service"
 
   # scripts:
   #   preinstall: "scripts/preinstall.bash"
