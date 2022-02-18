@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
 )
 
 // ProcessRoot calculates Atropos votes only for the new root.

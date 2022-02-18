@@ -1,13 +1,13 @@
 package abft
 
 import (
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/inter/pos"
-	"github.com/NextExchange/go-next-base/kvdb"
-	"github.com/NextExchange/go-next-base/kvdb/memorydb"
-	"github.com/NextExchange/go-next-base/next"
-	"github.com/NextExchange/go-next-base/utils/adapters"
-	"github.com/NextExchange/go-next-base/vecfc"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/inter/pos"
+	"github.com/NextSmartChain/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb/memorydb"
+	"github.com/NextSmartChain/go-next-base/next"
+	"github.com/NextSmartChain/go-next-base/utils/adapters"
+	"github.com/NextSmartChain/go-next-base/vecfc"
 )
 
 type applyBlockFn func(block *lachesis.Block) *pos.Validators

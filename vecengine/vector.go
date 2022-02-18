@@ -1,8 +1,8 @@
 package vecengine
 
 import (
-	"github.com/NextExchange/go-next-base/inter/dag"
-	"github.com/NextExchange/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
 )
 
 type LowestAfterI interface {

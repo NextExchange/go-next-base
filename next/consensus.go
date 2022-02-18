@@ -1,8 +1,8 @@
 package lachesis
 
 import (
-	"github.com/NextExchange/go-next-base/inter/dag"
-	"github.com/NextExchange/go-next-base/inter/pos"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/inter/pos"
 )
 
 // Consensus is a consensus interface.

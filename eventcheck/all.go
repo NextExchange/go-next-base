@@ -1,10 +1,10 @@
 package eventcheck
 
 import (
-	"github.com/NextExchange/go-next-base/eventcheck/basiccheck"
-	"github.com/NextExchange/go-next-base/eventcheck/epochcheck"
-	"github.com/NextExchange/go-next-base/eventcheck/parentscheck"
-	"github.com/NextExchange/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/eventcheck/basiccheck"
+	"github.com/NextSmartChain/go-next-base/eventcheck/epochcheck"
+	"github.com/NextSmartChain/go-next-base/eventcheck/parentscheck"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
 )
 
 // Checkers is collection of all the checkers

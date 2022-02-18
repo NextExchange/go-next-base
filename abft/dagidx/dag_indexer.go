@@ -1,8 +1,8 @@
 package dagidx
 
 import (
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
 )
 
 type Seq interface {

@@ -1,8 +1,8 @@
 package abft
 
 import (
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/inter/pos"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/inter/pos"
 )
 
 const esKey = "e"

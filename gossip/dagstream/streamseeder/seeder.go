@@ -9,10 +9,10 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/NextExchange/go-next-base/gossip/dagstream"
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/utils/workers"
+	"github.com/NextSmartChain/go-next-base/gossip/dagstream"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/utils/workers"
 )
 
 var (

@@ -11,8 +11,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/NextExchange/go-next-base/common/bigendian"
-	"github.com/NextExchange/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/common/bigendian"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
 )
 
 type (

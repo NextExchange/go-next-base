@@ -1,7 +1,7 @@
 package wmedian
 
 import (
-	"github.com/NextExchange/go-next-base/inter/pos"
+	"github.com/NextSmartChain/go-next-base/inter/pos"
 )
 
 type WeightedValue interface {

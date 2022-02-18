@@ -4,8 +4,8 @@ import (
 	"math/rand"
 	"sync"
 
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/kvdb"
 )
 
 type fakeFS struct {

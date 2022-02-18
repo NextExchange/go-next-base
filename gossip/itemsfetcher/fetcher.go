@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/NextExchange/go-next-base/utils/wlru"
-	"github.com/NextExchange/go-next-base/utils/workers"
+	"github.com/NextSmartChain/go-next-base/utils/wlru"
+	"github.com/NextSmartChain/go-next-base/utils/workers"
 )
 
 /*

@@ -1,6 +1,6 @@
 package queuedcheck
 
-import "github.com/NextExchange/go-next-base/inter/dag"
+import "github.com/NextSmartChain/go-next-base/inter/dag"
 
 type EventTask interface {
 	Event() dag.Event

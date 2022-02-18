@@ -3,7 +3,7 @@ package synced
 import (
 	"sync"
 
-	"github.com/NextExchange/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb"
 )
 
 // store wrapper around any kvdb.Store.

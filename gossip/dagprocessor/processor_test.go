@@ -8,13 +8,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/NextExchange/go-next-base/eventcheck/queuedcheck"
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/dag"
-	"github.com/NextExchange/go-next-base/inter/dag/tdag"
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/utils/cachescale"
-	"github.com/NextExchange/go-next-base/utils/datasemaphore"
+	"github.com/NextSmartChain/go-next-base/eventcheck/queuedcheck"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/inter/dag/tdag"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/utils/cachescale"
+	"github.com/NextSmartChain/go-next-base/utils/datasemaphore"
 )
 
 func TestProcessor(t *testing.T) {
@@ -28,7 +28,7 @@ var maxGroupSize = dag.Metric{
 	Size: 50 * 50,
 }
 
-func shuffleTasksIntoChunks(inTasks []queuedcheck.EventTask)  [][]queuedcheck.EventTask {
+func shuffleTasksIntoChunks(inTasks []queuedcheck.EventTask) [][]queuedcheck.EventTask {
 	if len(inTasks) == 0 {
 		return nil
 	}

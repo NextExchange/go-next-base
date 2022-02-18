@@ -3,7 +3,7 @@ package itemsfetcher
 import (
 	"time"
 
-	"github.com/NextExchange/go-next-base/utils/cachescale"
+	"github.com/NextSmartChain/go-next-base/utils/cachescale"
 )
 
 type Config struct {

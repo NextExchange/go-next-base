@@ -1,8 +1,8 @@
 package tdag
 
 import (
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
 )
 
 type TestEvent struct {

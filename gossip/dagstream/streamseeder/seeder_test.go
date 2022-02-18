@@ -12,12 +12,12 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/NextExchange/go-next-base/gossip/dagstream"
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/dag"
-	"github.com/NextExchange/go-next-base/inter/dag/tdag"
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/utils/cachescale"
+	"github.com/NextSmartChain/go-next-base/gossip/dagstream"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/inter/dag/tdag"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/utils/cachescale"
 )
 
 func TestSeederResponsesOrder(t *testing.T) {

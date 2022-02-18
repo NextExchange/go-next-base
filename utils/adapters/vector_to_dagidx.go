@@ -1,10 +1,10 @@
 package adapters
 
 import (
-	"github.com/NextExchange/go-next-base/abft/dagidx"
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/vecfc"
+	"github.com/NextSmartChain/go-next-base/abft/dagidx"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/vecfc"
 )
 
 type VectorSeqToDagIndexSeq struct {

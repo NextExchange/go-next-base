@@ -5,13 +5,13 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	"github.com/NextExchange/go-next-base/abft/dagidx"
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/dag"
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/inter/pos"
-	"github.com/NextExchange/go-next-base/kvdb"
-	"github.com/NextExchange/go-next-base/lachesis"
+	"github.com/NextSmartChain/go-next-base/abft/dagidx"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/inter/pos"
+	"github.com/NextSmartChain/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/lachesis"
 )
 
 var _ lachesis.Consensus = (*IndexedLachesis)(nil)

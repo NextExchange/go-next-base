@@ -1,4 +1,4 @@
-module github.com/NextExchange/go-next-base
+module github.com/NextSmartChain/go-next-base
 
 go 1.14
 

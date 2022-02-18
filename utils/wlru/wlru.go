@@ -3,7 +3,7 @@ package wlru
 import (
 	"sync"
 
-	"github.com/NextExchange/go-next-base/utils/simplewlru"
+	"github.com/NextSmartChain/go-next-base/utils/simplewlru"
 )
 
 // Cache is a thread-safe fixed size LRU cache.

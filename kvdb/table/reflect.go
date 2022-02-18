@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"reflect"
 
-	"github.com/NextExchange/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb"
 )
 
 // MigrateTables sets target fields to database tables.

@@ -3,8 +3,8 @@ package streamleecher
 import (
 	"time"
 
-	"github.com/NextExchange/go-next-base/gossip/dagstream/streamleecher/peerleecher"
-	"github.com/NextExchange/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/gossip/dagstream/streamleecher/peerleecher"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
 )
 
 type Config struct {

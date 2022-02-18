@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/NextExchange/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb"
 )
 
 type Producer struct {

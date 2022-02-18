@@ -8,8 +8,8 @@ import (
 
 	"github.com/status-im/keycard-go/hexutils"
 
-	"github.com/NextExchange/go-next-base/kvdb"
-	"github.com/NextExchange/go-next-base/kvdb/synced"
+	"github.com/NextSmartChain/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb/synced"
 )
 
 var _ kvdb.FlushableDBProducer = (*SyncedPool)(nil)

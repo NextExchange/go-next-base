@@ -1,6 +1,6 @@
 package abft
 
-import "github.com/NextExchange/go-next-base/utils/cachescale"
+import "github.com/NextSmartChain/go-next-base/utils/cachescale"
 
 type Config struct {
 }

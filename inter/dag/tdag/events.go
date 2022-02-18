@@ -3,8 +3,8 @@ package tdag
 import (
 	"strings"
 
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
 )
 
 // Events is a ordered slice of events.

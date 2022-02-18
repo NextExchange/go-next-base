@@ -3,7 +3,7 @@ package pos
 import (
 	"math/big"
 
-	"github.com/NextExchange/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
 )
 
 // ValidatorsBuilderBig is a helper to create Validators object out of bigint numbers

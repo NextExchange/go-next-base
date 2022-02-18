@@ -5,14 +5,14 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/NextExchange/go-next-base/eventcheck"
-	"github.com/NextExchange/go-next-base/eventcheck/queuedcheck"
-	"github.com/NextExchange/go-next-base/gossip/dagordering"
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/dag"
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/utils/datasemaphore"
-	"github.com/NextExchange/go-next-base/utils/workers"
+	"github.com/NextSmartChain/go-next-base/eventcheck"
+	"github.com/NextSmartChain/go-next-base/eventcheck/queuedcheck"
+	"github.com/NextSmartChain/go-next-base/gossip/dagordering"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/utils/datasemaphore"
+	"github.com/NextSmartChain/go-next-base/utils/workers"
 )
 
 var (

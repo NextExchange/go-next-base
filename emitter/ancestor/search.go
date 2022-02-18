@@ -1,7 +1,7 @@
 package ancestor
 
 import (
-	"github.com/NextExchange/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/hash"
 )
 
 // SearchStrategy defines a criteria used to estimate the "best" subset of parents to emit event with.

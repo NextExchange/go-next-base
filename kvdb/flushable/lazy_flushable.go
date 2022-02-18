@@ -1,8 +1,8 @@
 package flushable
 
 import (
-	"github.com/NextExchange/go-next-base/kvdb"
-	"github.com/NextExchange/go-next-base/kvdb/devnulldb"
+	"github.com/NextSmartChain/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb/devnulldb"
 )
 
 // LazyFlushable is a Flushable with delayed DB producer

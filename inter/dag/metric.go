@@ -3,7 +3,7 @@ package dag
 import (
 	"fmt"
 
-	"github.com/NextExchange/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
 )
 
 type Metric struct {

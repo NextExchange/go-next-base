@@ -1,7 +1,7 @@
 package idx
 
 import (
-	"github.com/NextExchange/go-next-base/common/bigendian"
+	"github.com/NextSmartChain/go-next-base/common/bigendian"
 )
 
 type (

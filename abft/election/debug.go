@@ -4,7 +4,7 @@ import (
 	"crypto/sha256"
 	"fmt"
 
-	"github.com/NextExchange/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/hash"
 )
 
 // DebugStateHash may be used in tests to match election state

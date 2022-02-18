@@ -1,7 +1,7 @@
 package ancestor
 
 import (
-	"github.com/NextExchange/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/hash"
 )
 
 type MetricStrategy struct {

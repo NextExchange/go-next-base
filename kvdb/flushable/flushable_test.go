@@ -14,11 +14,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 
-	"github.com/NextExchange/go-next-base/common/bigendian"
-	"github.com/NextExchange/go-next-base/kvdb"
-	"github.com/NextExchange/go-next-base/kvdb/leveldb"
-	"github.com/NextExchange/go-next-base/kvdb/memorydb"
-	"github.com/NextExchange/go-next-base/kvdb/table"
+	"github.com/NextSmartChain/go-next-base/common/bigendian"
+	"github.com/NextSmartChain/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb/leveldb"
+	"github.com/NextSmartChain/go-next-base/kvdb/memorydb"
+	"github.com/NextSmartChain/go-next-base/kvdb/table"
 )
 
 func TestFlushable(t *testing.T) {

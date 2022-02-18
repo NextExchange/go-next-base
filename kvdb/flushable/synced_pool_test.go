@@ -5,10 +5,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/NextExchange/go-next-base/common/bigendian"
-	"github.com/NextExchange/go-next-base/kvdb"
-	"github.com/NextExchange/go-next-base/kvdb/memorydb"
-	"github.com/NextExchange/go-next-base/kvdb/table"
+	"github.com/NextSmartChain/go-next-base/common/bigendian"
+	"github.com/NextSmartChain/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb/memorydb"
+	"github.com/NextSmartChain/go-next-base/kvdb/table"
 )
 
 func TestSyncedPoolUnderlying(t *testing.T) {

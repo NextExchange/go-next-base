@@ -1,7 +1,7 @@
 package skiperrors
 
 import (
-	"github.com/NextExchange/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb"
 )
 
 // wrapper is a kvdb.Store wrapper around any kvdb.Store.

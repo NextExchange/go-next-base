@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/NextExchange/go-next-base/kvdb/memorydb"
-	"github.com/NextExchange/go-next-base/kvdb/table"
+	"github.com/NextSmartChain/go-next-base/kvdb/memorydb"
+	"github.com/NextSmartChain/go-next-base/kvdb/table"
 )
 
 func TestWrapper(t *testing.T) {

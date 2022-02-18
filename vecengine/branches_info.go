@@ -1,8 +1,8 @@
 package vecengine
 
 import (
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/inter/pos"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/inter/pos"
 )
 
 // BranchesInfo contains information about global branches of each validator

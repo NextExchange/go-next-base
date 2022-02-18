@@ -4,11 +4,11 @@ import (
 	"math"
 	"sync"
 
-	"github.com/NextExchange/go-next-base/eventcheck"
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/dag"
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/utils/wlru"
+	"github.com/NextSmartChain/go-next-base/eventcheck"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/utils/wlru"
 )
 
 type (

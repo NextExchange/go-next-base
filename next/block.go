@@ -1,7 +1,7 @@
 package lachesis
 
 import (
-	"github.com/NextExchange/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/hash"
 )
 
 // Block is a part of an ordered chain of batches of events.

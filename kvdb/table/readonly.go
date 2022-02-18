@@ -1,7 +1,7 @@
 package table
 
 import (
-	"github.com/NextExchange/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb"
 )
 
 // Readonly table wraper of the underling DB, so all the table's data is stored with a prefix in underling DB.

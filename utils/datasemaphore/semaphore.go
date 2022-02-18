@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/NextExchange/go-next-base/inter/dag"
+	"github.com/NextSmartChain/go-next-base/inter/dag"
 )
 
 type DataSemaphore struct {

@@ -1,7 +1,7 @@
 package memorydb
 
 import (
-	"github.com/NextExchange/go-next-base/kvdb"
+	"github.com/NextSmartChain/go-next-base/kvdb"
 )
 
 type Mod func(kvdb.DropableStore) kvdb.DropableStore

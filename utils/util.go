@@ -3,8 +3,8 @@ package utils
 import (
 	"fmt"
 
-	"github.com/NextExchange/go-next-base/hash"
-	"github.com/NextExchange/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/hash"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
 )
 
 // NameOf returns human readable string representation.

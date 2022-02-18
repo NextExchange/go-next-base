@@ -3,9 +3,9 @@ package abft
 import (
 	"errors"
 
-	"github.com/NextExchange/go-next-base/abft/election"
-	"github.com/NextExchange/go-next-base/inter/idx"
-	"github.com/NextExchange/go-next-base/inter/pos"
+	"github.com/NextSmartChain/go-next-base/abft/election"
+	"github.com/NextSmartChain/go-next-base/inter/idx"
+	"github.com/NextSmartChain/go-next-base/inter/pos"
 )
 
 const (
