@@ -11,7 +11,7 @@ import (
 	"github.com/NextSmartChain/go-next-base/inter/idx"
 	"github.com/NextSmartChain/go-next-base/inter/pos"
 	"github.com/NextSmartChain/go-next-base/kvdb"
-	"github.com/NextSmartChain/go-next-base/lachesis"
+	"github.com/NextSmartChain/go-next-base/next"
 )
 
 var _ lachesis.Consensus = (*IndexedLachesis)(nil)
