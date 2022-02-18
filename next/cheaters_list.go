@@ -2,7 +2,6 @@ package lachesis
 
 import (
 	"github.com/ethereum/go-ethereum/rlp"
-
 	"github.com/NextExchange/go-next-base/inter/idx"
 )
 

@@ -6,7 +6,7 @@ import (
 	"github.com/NextExchange/go-next-base/inter/dag"
 	"github.com/NextExchange/go-next-base/inter/idx"
 	"github.com/NextExchange/go-next-base/inter/pos"
-	"github.com/NextExchange/go-next-base/lachesis"
+	"github.com/NextExchange/go-next-base/next"
 )
 
 var _ lachesis.Consensus = (*Lachesis)(nil)

@@ -5,7 +5,7 @@ import (
 	"github.com/NextExchange/go-next-base/inter/pos"
 	"github.com/NextExchange/go-next-base/kvdb"
 	"github.com/NextExchange/go-next-base/kvdb/memorydb"
-	"github.com/NextExchange/go-next-base/lachesis"
+	"github.com/NextExchange/go-next-base/next"
 	"github.com/NextExchange/go-next-base/utils/adapters"
 	"github.com/NextExchange/go-next-base/vecfc"
 )
