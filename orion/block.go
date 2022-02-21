@@ -1,4 +1,4 @@
-package lachesis
+package orion
 
 import (
 	"github.com/NextSmartChain/go-next-base/hash"
