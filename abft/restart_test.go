@@ -14,7 +14,7 @@ import (
 	"github.com/NextSmartChain/go-next-base/inter/pos"
 	"github.com/NextSmartChain/go-next-base/kvdb"
 	"github.com/NextSmartChain/go-next-base/kvdb/memorydb"
-	"github.com/NextSmartChain/go-next-base/lachesis"
+	"github.com/NextSmartChain/go-next-base/orion"
 	"github.com/NextSmartChain/go-next-base/utils/adapters"
 	"github.com/NextSmartChain/go-next-base/vecfc"
 )
@@ -70,10 +70,10 @@ func testRestart(t *testing.T, weights []pos.Weight, cheatersCount int) {
 	)
 
 	nodes := tdag.GenNodes(len(weights))
-	lchs := make([]*TestLachesis, 0, COUNT)
+	lchs := make([]*TestOrion, 0, COUNT)
 	inputs := make([]*EventStore, 0, COUNT)
 	for i := 0; i < COUNT; i++ {
-		lch, _, input := FakeLachesis(nodes, weights)
+		lch, _, input := FakeOrion(nodes, weights)
 		lchs = append(lchs, lch)
 		inputs = append(inputs, input)
 	}
@@ -84,7 +84,7 @@ func testRestart(t *testing.T, weights []pos.Weight, cheatersCount int) {
 	// seal epoch on decided frame == maxEpochBlocks
 	for _, _lch := range lchs {
 		lch := _lch // capture
-		lch.applyBlock = func(block *lachesis.Block) *pos.Validators {
+		lch.applyBlock = func(block *orion.Block) *pos.Validators {
 			if lch.store.GetLastDecidedFrame()+1 == idx.Frame(maxEpochBlocks) {
 				// seal epoch
 				return lch.store.GetValidators()
@@ -149,10 +149,10 @@ func testRestart(t *testing.T, weights []pos.Weight, cheatersCount int) {
 				return memorydb.New()
 			}
 
-			restored := NewIndexedLachesis(store, prev.input, &adapters.VectorToDagIndexer{vecfc.NewIndex(prev.crit, vecfc.LiteConfig())}, prev.crit, prev.config)
+			restored := NewIndexedOrion(store, prev.input, &adapters.VectorToDagIndexer{vecfc.NewIndex(prev.crit, vecfc.LiteConfig())}, prev.crit, prev.config)
 			assertar.NoError(restored.Bootstrap(prev.callback))
 
-			lchs[RESTORED].IndexedLachesis = restored
+			lchs[RESTORED].IndexedOrion = restored
 		}
 
 		if !assertar.Equal(e.Epoch(), lchs[EXPECTED].store.GetEpoch()) {
@@ -178,7 +178,7 @@ func testRestart(t *testing.T, weights []pos.Weight, cheatersCount int) {
 	compareBlocks(assertar, lchs[EXPECTED], lchs[RESTORED])
 }
 
-func compareStates(assertar *assert.Assertions, expected, restored *TestLachesis) {
+func compareStates(assertar *assert.Assertions, expected, restored *TestOrion) {
 	assertar.Equal(
 		*(expected.store.GetLastDecidedState()), *(restored.store.GetLastDecidedState()))
 	assertar.Equal(
@@ -192,7 +192,7 @@ func compareStates(assertar *assert.Assertions, expected, restored *TestLachesis
 	}
 }
 
-func compareBlocks(assertar *assert.Assertions, expected, restored *TestLachesis) {
+func compareBlocks(assertar *assert.Assertions, expected, restored *TestOrion) {
 	assertar.Equal(len(expected.blocks), len(restored.blocks))
 	for i := idx.Block(1); i <= idx.Block(len(restored.blocks)); i++ {
 		if !assertar.NotNil(restored.blocks[i]) ||

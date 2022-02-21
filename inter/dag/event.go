@@ -38,7 +38,7 @@ type MutableEvent interface {
 	SetID(id [24]byte)
 }
 
-// BaseEvent is the consensus message in the Lachesis consensus algorithm
+// BaseEvent is the consensus message in the Orion consensus algorithm
 // The structure isn't supposed to be used as-is:
 // Doesn't contain payload, it should be extended by an app
 // Doesn't contain event signature, it should be extended by an app

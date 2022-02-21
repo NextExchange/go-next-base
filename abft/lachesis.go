@@ -6,30 +6,30 @@ import (
 	"github.com/NextSmartChain/go-next-base/inter/dag"
 	"github.com/NextSmartChain/go-next-base/inter/idx"
 	"github.com/NextSmartChain/go-next-base/inter/pos"
-	"github.com/NextSmartChain/go-next-base/lachesis"
+	"github.com/NextSmartChain/go-next-base/orion"
 )
 
-var _ lachesis.Consensus = (*Lachesis)(nil)
+var _ orion.Consensus = (*Orion)(nil)
 
 type DagIndex interface {
 	dagidx.VectorClock
 	dagidx.ForklessCause
 }
 
-// Lachesis performs events ordering and detects cheaters
+// Orion performs events ordering and detects cheaters
 // It's a wrapper around Orderer, which adds features which might potentially be application-specific:
 // confirmed events traversal, cheaters detection.
 // Use this structure if need a general-purpose consensus. Instead, use lower-level abft.Orderer.
-type Lachesis struct {
+type Orion struct {
 	*Orderer
 	dagIndex      DagIndex
 	uniqueDirtyID uniqueID
-	callback      lachesis.ConsensusCallbacks
+	callback      orion.ConsensusCallbacks
 }
 
-// New creates Lachesis instance.
-func NewLachesis(store *Store, input EventSource, dagIndex DagIndex, crit func(error), config Config) *Lachesis {
-	p := &Lachesis{
+// New creates Orion instance.
+func NewOrion(store *Store, input EventSource, dagIndex DagIndex, crit func(error), config Config) *Orion {
+	p := &Orion{
 		Orderer:  NewOrderer(store, input, dagIndex, crit, config),
 		dagIndex: dagIndex,
 	}
@@ -37,7 +37,7 @@ func NewLachesis(store *Store, input EventSource, dagIndex DagIndex, crit func(e
 	return p
 }
 
-func (p *Lachesis) confirmEvents(frame idx.Frame, atropos hash.Event, onEventConfirmed func(dag.Event)) error {
+func (p *Orion) confirmEvents(frame idx.Frame, atropos hash.Event, onEventConfirmed func(dag.Event)) error {
 	err := p.dfsSubgraph(atropos, func(e dag.Event) bool {
 		decidedFrame := p.store.GetEventConfirmedOn(e.ID())
 		if decidedFrame != 0 {
@@ -53,7 +53,7 @@ func (p *Lachesis) confirmEvents(frame idx.Frame, atropos hash.Event, onEventCon
 	return err
 }
 
-func (p *Lachesis) applyAtropos(decidedFrame idx.Frame, atropos hash.Event) *pos.Validators {
+func (p *Orion) applyAtropos(decidedFrame idx.Frame, atropos hash.Event) *pos.Validators {
 	atroposVecClock := p.dagIndex.GetMergedHighestBefore(atropos)
 
 	validators := p.store.GetValidators()
@@ -68,7 +68,7 @@ func (p *Lachesis) applyAtropos(decidedFrame idx.Frame, atropos hash.Event) *pos
 	if p.callback.BeginBlock == nil {
 		return nil
 	}
-	blockCallback := p.callback.BeginBlock(&lachesis.Block{
+	blockCallback := p.callback.BeginBlock(&orion.Block{
 		Atropos:  atropos,
 		Cheaters: cheaters,
 	})
@@ -85,11 +85,11 @@ func (p *Lachesis) applyAtropos(decidedFrame idx.Frame, atropos hash.Event) *pos
 	return nil
 }
 
-func (p *Lachesis) Bootstrap(callback lachesis.ConsensusCallbacks) error {
+func (p *Orion) Bootstrap(callback orion.ConsensusCallbacks) error {
 	return p.BootstrapWithOrderer(callback, p.OrdererCallbacks())
 }
 
-func (p *Lachesis) BootstrapWithOrderer(callback lachesis.ConsensusCallbacks, ordererCallbacks OrdererCallbacks) error {
+func (p *Orion) BootstrapWithOrderer(callback orion.ConsensusCallbacks, ordererCallbacks OrdererCallbacks) error {
 	err := p.Orderer.Bootstrap(ordererCallbacks)
 	if err != nil {
 		return err
@@ -98,7 +98,7 @@ func (p *Lachesis) BootstrapWithOrderer(callback lachesis.ConsensusCallbacks, or
 	return nil
 }
 
-func (p *Lachesis) OrdererCallbacks() OrdererCallbacks {
+func (p *Orion) OrdererCallbacks() OrdererCallbacks {
 	return OrdererCallbacks{
 		ApplyAtropos: p.applyAtropos,
 	}

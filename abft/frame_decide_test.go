@@ -11,7 +11,7 @@ import (
 	"github.com/NextSmartChain/go-next-base/inter/dag/tdag"
 	"github.com/NextSmartChain/go-next-base/inter/idx"
 	"github.com/NextSmartChain/go-next-base/inter/pos"
-	"github.com/NextSmartChain/go-next-base/lachesis"
+	"github.com/NextSmartChain/go-next-base/orion"
 )
 
 func TestConfirmBlocks_1(t *testing.T) {
@@ -58,13 +58,13 @@ func testConfirmBlocks(t *testing.T, weights []pos.Weight, cheatersCount int) {
 	assertar := assert.New(t)
 
 	nodes := tdag.GenNodes(len(weights))
-	lch, _, input := FakeLachesis(nodes, weights)
+	lch, _, input := FakeOrion(nodes, weights)
 
 	var (
 		frames []idx.Frame
-		blocks []*lachesis.Block
+		blocks []*orion.Block
 	)
-	lch.applyBlock = func(block *lachesis.Block) *pos.Validators {
+	lch.applyBlock = func(block *orion.Block) *pos.Validators {
 		frames = append(frames, lch.store.GetLastDecidedFrame()+1)
 		blocks = append(blocks, block)
 

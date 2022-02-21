@@ -2,8 +2,8 @@ before:
   hooks:
     - make clean proto vendor
 builds:
-  - main: ./cmd/lachesis/main.go
-    binary: go-lachesis-base
+  - main: ./cmd/next/main.go
+    binary: go-next-base
     ldflags:
       - -linkmode external -extldflags -static -s -w
       - -X main.gitCommit={{ .ShortCommit }}
@@ -23,7 +23,7 @@ archive:
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ .Tag }}-lachesis"
+  name_template: "{{ .Tag }}-next"
 changelog:
   sort: asc
   filters:
@@ -38,9 +38,9 @@ nfpm:
     darwin: macOS
     linux: Tux
 
-  vendor: Fanton Foundation
-  homepage: https://fantom.foundation
-  maintainer: Samuel Marks <samuel@fantom.foundation>
+  vendor: NEXT Smart Chain
+  homepage: https://nextsmartchain.com
+  maintainer: NEXT Smart Chain Developers <dev@nextsmartchain.com>
   description: BFT Consensus platform for distributed applications.
   license: MIT
 
@@ -49,10 +49,10 @@ nfpm:
     - rpm
 
   empty_folders:
-    - /var/log/go-lachesis-base
+    - /var/log/go-next-base
 
   files:
-    "scripts/daemon/go-next-base.service": "/lib/systemd/system/go-lachesis-base.service"
+    "scripts/daemon/go-next-base.service": "/lib/systemd/system/go-next-base.service"
 
   # scripts:
   #   preinstall: "scripts/preinstall.bash"

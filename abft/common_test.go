@@ -5,24 +5,24 @@ import (
 	"github.com/NextSmartChain/go-next-base/inter/pos"
 	"github.com/NextSmartChain/go-next-base/kvdb"
 	"github.com/NextSmartChain/go-next-base/kvdb/memorydb"
-	"github.com/NextSmartChain/go-next-base/lachesis"
+	"github.com/NextSmartChain/go-next-base/orion"
 	"github.com/NextSmartChain/go-next-base/utils/adapters"
 	"github.com/NextSmartChain/go-next-base/vecfc"
 )
 
-type applyBlockFn func(block *lachesis.Block) *pos.Validators
+type applyBlockFn func(block *orion.Block) *pos.Validators
 
-// TestLachesis extends Lachesis for tests.
-type TestLachesis struct {
-	*IndexedLachesis
+// TestOrion extends Orion for tests.
+type TestOrion struct {
+	*IndexedOrion
 
-	blocks map[idx.Block]*lachesis.Block
+	blocks map[idx.Block]*orion.Block
 
 	applyBlock applyBlockFn
 }
 
-// FakeLachesis creates empty abft with mem store and equal weights of nodes in genesis.
-func FakeLachesis(nodes []idx.ValidatorID, weights []pos.Weight, mods ...memorydb.Mod) (*TestLachesis, *Store, *EventStore) {
+// FakeOrion creates empty abft with mem store and equal weights of nodes in genesis.
+func FakeOrion(nodes []idx.ValidatorID, weights []pos.Weight, mods ...memorydb.Mod) (*TestOrion, *Store, *EventStore) {
 	validators := make(pos.ValidatorsBuilder, len(nodes))
 	for i, v := range nodes {
 		if weights == nil {
@@ -51,19 +51,19 @@ func FakeLachesis(nodes []idx.ValidatorID, weights []pos.Weight, mods ...memoryd
 	input := NewEventStore()
 
 	config := LiteConfig()
-	lch := NewIndexedLachesis(store, input, &adapters.VectorToDagIndexer{vecfc.NewIndex(crit, vecfc.LiteConfig())}, crit, config)
+	lch := NewIndexedOrion(store, input, &adapters.VectorToDagIndexer{vecfc.NewIndex(crit, vecfc.LiteConfig())}, crit, config)
 
-	extended := &TestLachesis{
-		IndexedLachesis: lch,
-		blocks:          map[idx.Block]*lachesis.Block{},
+	extended := &TestOrion{
+		IndexedOrion: lch,
+		blocks:          map[idx.Block]*orion.Block{},
 	}
 
 	blockIdx := idx.Block(0)
 
-	err = extended.Bootstrap(lachesis.ConsensusCallbacks{
-		BeginBlock: func(block *lachesis.Block) lachesis.BlockCallbacks {
+	err = extended.Bootstrap(orion.ConsensusCallbacks{
+		BeginBlock: func(block *orion.Block) orion.BlockCallbacks {
 			blockIdx++
-			return lachesis.BlockCallbacks{
+			return orion.BlockCallbacks{
 				EndBlock: func() (sealEpoch *pos.Validators) {
 					// track blocks
 					extended.blocks[blockIdx] = block

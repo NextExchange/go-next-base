@@ -11,17 +11,17 @@ import (
 	"github.com/NextSmartChain/go-next-base/inter/idx"
 	"github.com/NextSmartChain/go-next-base/inter/pos"
 	"github.com/NextSmartChain/go-next-base/kvdb"
-	"github.com/NextSmartChain/go-next-base/lachesis"
+	"github.com/NextSmartChain/go-next-base/orion"
 )
 
-var _ lachesis.Consensus = (*IndexedLachesis)(nil)
+var _ orion.Consensus = (*IndexedOrion)(nil)
 
-// IndexedLachesis performs events ordering and detects cheaters
+// IndexedOrion performs events ordering and detects cheaters
 // It's a wrapper around Orderer, which adds features which might potentially be application-specific:
 // confirmed events traversal, DAG index updates and cheaters detection.
 // Use this structure if need a general-purpose consensus. Instead, use lower-level abft.Orderer.
-type IndexedLachesis struct {
-	*Lachesis
+type IndexedOrion struct {
+	*Orion
 	dagIndexer    DagIndexer
 	uniqueDirtyID uniqueID
 }
@@ -37,10 +37,10 @@ type DagIndexer interface {
 	Reset(validators *pos.Validators, db kvdb.Store, getEvent func(hash.Event) dag.Event)
 }
 
-// New creates IndexedLachesis instance.
-func NewIndexedLachesis(store *Store, input EventSource, dagIndexer DagIndexer, crit func(error), config Config) *IndexedLachesis {
-	p := &IndexedLachesis{
-		Lachesis:      NewLachesis(store, input, dagIndexer, crit, config),
+// New creates IndexedOrion instance.
+func NewIndexedOrion(store *Store, input EventSource, dagIndexer DagIndexer, crit func(error), config Config) *IndexedOrion {
+	p := &IndexedOrion{
+		Orion:      NewOrion(store, input, dagIndexer, crit, config),
 		dagIndexer:    dagIndexer,
 		uniqueDirtyID: uniqueID{new(big.Int)},
 	}
@@ -50,7 +50,7 @@ func NewIndexedLachesis(store *Store, input EventSource, dagIndexer DagIndexer, 
 
 // Build fills consensus-related fields: Frame, IsRoot
 // returns error if event should be dropped
-func (p *IndexedLachesis) Build(e dag.MutableEvent) error {
+func (p *IndexedOrion) Build(e dag.MutableEvent) error {
 	e.SetID(p.uniqueDirtyID.sample())
 
 	defer p.dagIndexer.DropNotFlushed()
@@ -59,21 +59,21 @@ func (p *IndexedLachesis) Build(e dag.MutableEvent) error {
 		return err
 	}
 
-	return p.Lachesis.Build(e)
+	return p.Orion.Build(e)
 }
 
 // Process takes event into processing.
 // Event order matter: parents first.
 // All the event checkers must be launched.
 // Process is not safe for concurrent use.
-func (p *IndexedLachesis) Process(e dag.Event) (err error) {
+func (p *IndexedOrion) Process(e dag.Event) (err error) {
 	defer p.dagIndexer.DropNotFlushed()
 	err = p.dagIndexer.Add(e)
 	if err != nil {
 		return err
 	}
 
-	err = p.Lachesis.Process(e)
+	err = p.Orion.Process(e)
 	if err != nil {
 		return err
 	}
@@ -81,8 +81,8 @@ func (p *IndexedLachesis) Process(e dag.Event) (err error) {
 	return nil
 }
 
-func (p *IndexedLachesis) Bootstrap(callback lachesis.ConsensusCallbacks) error {
-	base := p.Lachesis.OrdererCallbacks()
+func (p *IndexedOrion) Bootstrap(callback orion.ConsensusCallbacks) error {
+	base := p.Orion.OrdererCallbacks()
 	ordererCallbacks := OrdererCallbacks{
 		ApplyAtropos: base.ApplyAtropos,
 		EpochDBLoaded: func(epoch idx.Epoch) {
@@ -92,7 +92,7 @@ func (p *IndexedLachesis) Bootstrap(callback lachesis.ConsensusCallbacks) error 
 			p.dagIndexer.Reset(p.store.GetValidators(), p.store.epochTable.VectorIndex, p.input.GetEvent)
 		},
 	}
-	return p.Lachesis.BootstrapWithOrderer(callback, ordererCallbacks)
+	return p.Orion.BootstrapWithOrderer(callback, ordererCallbacks)
 }
 
 type uniqueID struct {

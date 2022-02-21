@@ -14,7 +14,7 @@ type Checkers struct {
 	Parentscheck *parentscheck.Checker
 }
 
-// Validate runs all the checks except Lachesis-related
+// Validate runs all the checks except Orion-related
 func (v *Checkers) Validate(e dag.Event, parents dag.Events) error {
 	if err := v.Basiccheck.Validate(e); err != nil {
 		return err
